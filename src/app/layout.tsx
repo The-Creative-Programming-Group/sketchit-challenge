@@ -6,7 +6,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -22,12 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "bg-background text-primary",
-          poppins.className,
-        )}
-      >
+      <body className={cn("bg-background text-primary", poppins.className)}>
         {children}
       </body>
     </html>
