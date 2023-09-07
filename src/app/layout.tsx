@@ -1,3 +1,4 @@
+import "~/styles/fonts";
 import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
@@ -22,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={twMerge(
-          "bg-background font-sans text-foreground",
+          "bg-background font-sans text-primary",
           inter.variable,
         )}
       >
