@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { experimental_useFormStatus } from "react-dom";
-import { twMerge } from "tailwind-merge";
+import {cn} from "~/lib/utils";
 
 export const Input = React.forwardRef<
     HTMLInputElement,
@@ -13,8 +13,8 @@ export const Input = React.forwardRef<
     return (
         <input
             disabled={pending}
-            className={twMerge(
-                "border-8 border-primary text-primary bg-transparent rounded-[1.25rem] py-[1.65rem] px-6 w-full text-[1.1875rem] leading-[1.813rem] placeholder-primary",
+            className={cn(
+                "border-8 border-primary text-primary bg-transparent rounded-[1.25rem] py-[1.35rem] px-6 w-full text-[1.1875rem] leading-[1.813rem] placeholder-primary",
                 className
             )}
             {...props}
