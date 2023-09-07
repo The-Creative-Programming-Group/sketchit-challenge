@@ -6,11 +6,14 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "convex:dev": "convex dev"
   },
   "dependencies": {
+    "@radix-ui/react-switch": "^1.0.3",
     "@t3-oss/env-nextjs": "^0.3.1",
     "@total-typescript/ts-reset": "^0.5.1",
+    "clsx": "^2.0.0",
     "convex": "^1.2.1",
     "next": "^13.4.2",
     "react": "18.2.0",
