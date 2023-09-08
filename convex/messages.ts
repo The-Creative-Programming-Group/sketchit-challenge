@@ -12,27 +12,31 @@ export const list = query({
       .collect();
     // Reverse the list so that it's in a chronological order.
     const messageWithUsername = await Promise.all(
-        messages.map(async (message) => {
-          // Find the likes for each message
-          const player = await ctx.db.get(message.playerId);
-          // Join the count of likes with the message data
-          return {
-            ...message,
-            // Format smileys
-            username: player?.username
-          };
-        }));
-      // Reverse the list so that it's in chronological order.
-      return messageWithUsername.reverse();
-    },
-  });
-  
-  //player send a message in a room 
-  export const send = mutation({
-    args: { body: v.string(), playerId: v.id("player"),roomId:v.id("rooms") },
-    handler: async (ctx, args) => {
-      // Send a new message.
-      await ctx.db.insert("messages", { body:args.body, playerId:args.playerId,roomId:args.roomId });
-    },
-  });
-  
+      messages.map(async (message) => {
+        // Find the likes for each message
+        const player = await ctx.db.get(message.playerId);
+        // Join the count of likes with the message data
+        return {
+          ...message,
+          // Format smileys
+          username: player?.username,
+        };
+      }),
+    );
+    // Reverse the list so that it's in chronological order.
+    return messageWithUsername.reverse();
+  },
+});
+
+//player send a message in a room
+export const send = mutation({
+  args: { body: v.string(), playerId: v.id("player"), roomId: v.id("rooms") },
+  handler: async (ctx, args) => {
+    // Send a new message.
+    await ctx.db.insert("messages", {
+      body: args.body,
+      playerId: args.playerId,
+      roomId: args.roomId,
+    });
+  },
+});

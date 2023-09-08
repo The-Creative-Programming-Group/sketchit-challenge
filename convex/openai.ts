@@ -24,7 +24,10 @@ export const startGames = action({
       });
 
       if (checkTopicResponse.choices[0]?.text.includes("false")) {
-        return { message: "The backend got an error", error: "It's a bad topic!" }
+        return {
+          message: "The backend got an error",
+          error: "It's a bad topic!",
+        };
       }
 
       const response = await openai.completions.create({
@@ -43,19 +46,22 @@ export const startGames = action({
         });
         return words;
       } else {
-        console.error("The Open AI return nothing")
-        return { message: "The backend got an error", error: 'the maxinum of a room is 8!' }
+        console.error("The Open AI return nothing");
+        return {
+          message: "The backend got an error",
+          error: "the maxinum of a room is 8!",
+        };
       }
     } catch (error) {
       if (error instanceof OpenAI.APIError) {
         console.error(error.status); // e.g. 401
         console.error(error.message); // e.g. The authentication token you passed was invalid...
-        console.error(error.code);  // e.g. 'invalid_api_key'
-        console.error(error.type);  // e.g. 'invalid_request_error'
-        return { message: "The backend got an error", error: error }
+        console.error(error.code); // e.g. 'invalid_api_key'
+        console.error(error.type); // e.g. 'invalid_request_error'
+        return { message: "The backend got an error", error: error };
       } else {
         console.log(error);
-        return { message: "The backend got an error", error: error }
+        return { message: "The backend got an error", error: error };
       }
     }
   },
