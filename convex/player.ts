@@ -25,13 +25,19 @@ export const startGames = mutation({
   }
 });
 
-// update the player scroe
-export const updateScroe = mutation({
-  args: { _id: v.id("player"), score: v.number() },
-  handler: async (ctx, args) => {
-    await ctx.db.patch(args._id, { score: args.score });
-  },
-});
+// check the user's word is correct or not
+export const checkWordFromUser = mutation({
+  args: {playerId:v.id("player"),wordFromUser:v.string(),gameId:v.id("games")},
+  handler: async (ctx,args) => {
+    const games = await ctx.db.get(args.gameId);
+    // Update the score
+    if (games?.words?.includes(args.wordFromUser)){
+      const player = await ctx.db.get(args.playerId);
+      const newScore = player?.score?player?.score+1:1;
+      ctx.db.patch(args.playerId, { score: newScore });
+    }
+  }
+})
 
 // get all the players in a room
 export const getPlayersByRoomId = query({

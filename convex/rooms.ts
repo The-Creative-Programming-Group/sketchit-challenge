@@ -15,10 +15,14 @@ export const createRoom = mutation({
   },
 });
 
-// invent somebody to room
-export const invent = mutation({
+// let somebody join  into room
+export const join = mutation({
   args: { username: v.string(), roomId: v.id("rooms") },
   handler: async (ctx, args) => {
+    const players = await ctx.db.query('player').filter((q) => q.eq(q.field('roomId'), args.roomId)).collect();
+    if (players.length > 8) {
+      return {message: "The backend got an error", error: 'the maxinum of a room is 8!'}
+    }
     await ctx.db.insert("player", {
       username: args.username,
       roomId: args.roomId,

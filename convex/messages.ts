@@ -24,6 +24,7 @@ export const list = query({
     },
   });
   
+  //player send a message in a room 
   export const send = mutation({
     args: { body: v.string(), playerId: v.id("player"),roomId:v.id("rooms") },
     handler: async (ctx, args) => {
