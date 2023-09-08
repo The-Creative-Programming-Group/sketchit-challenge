@@ -1,6 +1,7 @@
 import { Button } from "~/ui/button";
 import { Input } from "~/ui/input";
 import { Switch } from "~/ui/switch";
+import {SmallInput} from "~/ui/small-input";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         </Button>
         <div className="mt-10 flex justify-between">
           <Switch description="Chat" />
+          <SmallInput type="number" defaultValue={600} description="Time limit" />
           <Switch description="Pairplay" />
         </div>
       </form>
