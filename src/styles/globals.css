@@ -18,5 +18,5 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-  -moz-appearance:textfield; /* for mozilla firefox */
+  -moz-appearance: textfield; /* for mozilla firefox */
 }
