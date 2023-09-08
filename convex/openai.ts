@@ -18,6 +18,8 @@ export const startGames = action({
   },
   handler: async (ctx, args) => {
     try {
+
+      // ! TODO: check if this acutally works!!!
       const checkTopicResponse = await openai.completions.create({
         model: "text-davinci-003",
         prompt: `if the  topic  '${args.topic}' is a good topic`,
@@ -49,7 +51,7 @@ export const startGames = action({
         console.error("The Open AI return nothing");
         return {
           message: "The backend got an error",
-          error: "the maxinum of a room is 8!",
+          error: "the maximum of a room is 8!",
         };
       }
     } catch (error: unknown) {

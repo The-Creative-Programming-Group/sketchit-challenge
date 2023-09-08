@@ -15,8 +15,8 @@ export const createRoom = mutation({
   },
 });
 
-// let somebody join  into room
-export const join = mutation({
+// let somebody join into room
+export const joinRoomByRoomId = mutation({
   args: { username: v.string(), roomId: v.id("rooms") },
   handler: async (ctx, args) => {
     const players = await ctx.db
