@@ -17,12 +17,12 @@ export const startGames = mutation({
     for (let i = 0; i < playerList.length; i++) {
       const player = playerList[i];
       if (player === undefined) {
-        console.error("The data error")
+        console.error("The data error");
       } else {
         await ctx.db.patch(player._id, { gameId: gameId, score: 0 });
       }
     }
-  }
+  },
 });
 
 // check the user's word is correct or not
