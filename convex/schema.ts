@@ -14,6 +14,7 @@ export default defineSchema({
   }),
   rooms: defineTable({
     roomName: v.string(),
+    // chatEnabled: v.boolean(), IDEA?
   }),
   messages: defineTable({
     playerId: v.id("player"),
