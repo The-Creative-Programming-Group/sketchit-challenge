@@ -52,15 +52,15 @@ export const startGames = action({
           error: "the maxinum of a room is 8!",
         };
       }
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof OpenAI.APIError) {
-        console.error(error.status); // e.g. 401
-        console.error(error.message); // e.g. The authentication token you passed was invalid...
-        console.error(error.code); // e.g. 'invalid_api_key'
-        console.error(error.type); // e.g. 'invalid_request_error'
+        console.error("Status", (error as OpenAI.APIError).status); // e.g. 401
+        console.error("Message", (error as OpenAI.APIError).message); // e.g. The authentication token you passed was invalid...
+        console.error("Error Code", (error as OpenAI.APIError).code); // e.g. 'invalid_api_key'
+        console.error("Error Type", (error as OpenAI.APIError).type); // e.g. 'invalid_request_error'
         return { message: "The backend got an error", error: error };
       } else {
-        console.log(error);
+        console.error(error);
         return { message: "The backend got an error", error: error };
       }
     }
