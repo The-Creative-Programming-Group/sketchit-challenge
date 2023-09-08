@@ -14,6 +14,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as messages from "../messages";
 import type * as openai from "../openai";
 import type * as player from "../player";
 import type * as rooms from "../rooms";
@@ -27,6 +28,7 @@ import type * as rooms from "../rooms";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  messages: typeof messages;
   openai: typeof openai;
   player: typeof player;
   rooms: typeof rooms;

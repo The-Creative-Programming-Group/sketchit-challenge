@@ -15,9 +15,14 @@ export const startGames = mutation({
       .filter((q) => q.eq(q.field("roomId"), args.roomId))
       .collect();
     for (let i = 0; i < playerList.length; i++) {
-      await ctx.db.patch(playerList[i]?._id, { gameId: gameId, score: 0 });
+      const player = playerList[i];
+      if (player === undefined) {
+        console.error("The data error")
+      } else {
+        await ctx.db.patch(player._id, { gameId: gameId, score: 0 });
+      }
     }
-  },
+  }
 });
 
 // update the player scroe
