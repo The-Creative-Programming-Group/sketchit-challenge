@@ -18,7 +18,6 @@ export const startGames = action({
   },
   handler: async (ctx, args) => {
     try {
-
       // ! TODO: check if this acutally works!!!
       const checkTopicResponse = await openai.completions.create({
         model: "text-davinci-003",
