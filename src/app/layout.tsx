@@ -1,10 +1,12 @@
 import "~/styles/globals.css";
-import { Inter } from "next/font/google";
-import { twMerge } from "tailwind-merge";
+import { Poppins } from "next/font/google";
+import { cn } from "~/lib/utils";
 
-const inter = Inter({
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  variable: "--font-sans",
+  style: ["normal", "italic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -20,12 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={twMerge(
-          "bg-background font-sans text-foreground",
-          inter.variable,
-        )}
-      >
+      <body className={cn("bg-background text-primary", poppins.className)}>
         {children}
       </body>
     </html>

@@ -6,15 +6,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-default)", ...fontFamily.sans],
       },
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
+        background: "var(--background)",
+        primary: "var(--primary)",
+        accent: "var(--accent)",
+        input: "var(--input)",
       },
     },
   },
