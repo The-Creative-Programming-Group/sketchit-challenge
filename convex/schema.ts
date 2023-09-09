@@ -5,6 +5,7 @@ export default defineSchema({
   games: defineTable({
     topic: v.string(),
     words: v.optional(v.string()),
+    // timeLimit: v.number(), IDEA?
   }),
   player: defineTable({
     username: v.string(),
