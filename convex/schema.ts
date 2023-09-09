@@ -1,7 +1,6 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
-
 // Why is there a different schema for game and room??? -  Jakob
 export default defineSchema({
   games: defineTable({
