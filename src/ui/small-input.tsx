@@ -3,19 +3,20 @@
 import * as React from "react";
 import { experimental_useFormStatus } from "react-dom";
 import { cn } from "~/lib/utils";
-import * as SwitchPrimitives from "@radix-ui/react-switch";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   description?: string;
 };
 export const SmallInput = React.forwardRef<HTMLInputElement, Props>(
-  ({ className, description, ...props }, ref) => {
+  ({ className, description, onClick, onChange, ...props }, ref) => {
     const { pending } = experimental_useFormStatus();
 
     return (
       <div className="flex flex-col items-center">
         <input
           disabled={pending}
+          onClick={onClick}
+          onChange={onChange}
           className={cn(
             "text-background bg-primary rounded-[1.25rem] font-semibold w-full text-[0.85rem] text-center h-[33px] w-[64px] leading-[1.813rem] placeholder-primary",
             className,
