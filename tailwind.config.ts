@@ -5,6 +5,9 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      minHeight: {
+        fullDVH: '100dvh',
+      },
       fontFamily: {
         sans: ["var(--font-default)", ...fontFamily.sans],
       },
