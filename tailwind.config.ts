@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       minHeight: {
-        fullDVH: '100dvh',
+        fullDVH: "100dvh",
       },
       fontFamily: {
         sans: ["var(--font-default)", ...fontFamily.sans],
