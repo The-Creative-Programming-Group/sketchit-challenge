@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 import { Poppins } from "next/font/google";
 import { cn } from "~/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("bg-background text-primary", poppins.className)}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
