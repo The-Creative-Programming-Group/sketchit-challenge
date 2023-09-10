@@ -52,7 +52,8 @@ export const startGames = action({
       } else {
         console.error("The Open AI return nothing");
         return {
-          message: "The backend got an error: The maximum amount of users is 8!",
+          message:
+            "The backend got an error: The maximum amount of users is 8!",
         };
       }
     } catch (error: unknown) {
