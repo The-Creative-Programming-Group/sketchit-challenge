@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 import { Poppins } from "next/font/google";
 import { cn } from "~/lib/utils";
+import ConvexClientProvider from "./ConvexClientProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("bg-background text-primary", poppins.className)}>
-        {children}
+      <ConvexClientProvider>{children}</ConvexClientProvider>  
       </body>
     </html>
   );
