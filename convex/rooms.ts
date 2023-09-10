@@ -3,10 +3,10 @@ import { v } from "convex/values";
 
 // create room
 export const createRoom = mutation({
-  args: { username: v.string() },
+  args: { username: v.string(), timeLimit: v.number(), pairs: v.boolean(), chatEnabled: v.boolean() },
   handler: async (ctx, args) => {
     const roomName = args.username + "'s Room";
-    const roomId = await ctx.db.insert("rooms", { roomName });
+    const roomId = await ctx.db.insert("rooms", { roomName, timeLimit: args.timeLimit, pairs: args.pairs, chatEnabled: args.chatEnabled  });
     const playerId = await ctx.db.insert("player", {
       username: args.username,
       roomId: roomId,
@@ -25,8 +25,7 @@ export const joinRoomByRoomId = mutation({
       .collect();
     if (players.length > 8) {
       return {
-        message: "The backend got an error",
-        error: "the maxinum of a room is 8!",
+        message: "The backend got an error: the maximum amount of users is 8!",
       };
     }
     await ctx.db.insert("player", {

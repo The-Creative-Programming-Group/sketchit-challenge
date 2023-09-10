@@ -5,9 +5,9 @@ import { v } from "convex/values";
 export const startGames = mutation({
   args: { topic: v.string(), words: v.string(), roomId: v.id("rooms") },
   handler: async (ctx, args) => {
-    const gameId = await ctx.db.insert("games", {
-      topic: args.topic,
-      words: args.words,
+    await ctx.db.patch(args.roomId, {
+        topic: args.topic,
+        words: args.words,
     });
     // update the player who in this room
     const playerList = await ctx.db
@@ -16,10 +16,10 @@ export const startGames = mutation({
       .collect();
     for (let i = 0; i < playerList.length; i++) {
       const player = playerList[i];
-      if (player === undefined) {
-        console.error("The data error");
+      if (player) {
+        await ctx.db.patch(player._id, { roomId: args.roomId, score: 0 });
       } else {
-        await ctx.db.patch(player._id, { gameId: gameId, score: 0 });
+        console.error("The data error");
       }
     }
   },
@@ -30,12 +30,12 @@ export const checkWordFromUser = mutation({
   args: {
     playerId: v.id("player"),
     wordFromUser: v.string(),
-    gameId: v.id("games"),
+    roomId: v.id("rooms"),
   },
   handler: async (ctx, args) => {
-    const games = await ctx.db.get(args.gameId);
+    const room = await ctx.db.get(args.roomId);
     // Update the score
-    if (games?.words?.includes(args.wordFromUser)) {
+    if (room?.words?.includes(args.wordFromUser)) {
       const player = await ctx.db.get(args.playerId);
       const newScore = player?.score ? player?.score + 1 : 1;
       ctx.db.patch(args.playerId, { score: newScore });
