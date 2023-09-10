@@ -35,7 +35,7 @@ export const joinRoomByRoomId = mutation({
       .collect();
     if (players.length > 8) {
       return {
-        message: "The backend got an error: the maximum amount of users is 8!",
+        message: "The backend got an error: The maximum amount of users is 8!",
       };
     }
     await ctx.db.insert("player", {

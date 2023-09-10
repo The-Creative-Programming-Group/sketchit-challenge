@@ -30,8 +30,7 @@ export const startGames = action({
 
       if (checkTopicResponse.choices[0]?.text.includes("false")) {
         return {
-          message: "The backend got an error",
-          error: "It's a bad topic!",
+          message: "The backend got an error: It's a bad topic!",
         };
       }
 
@@ -53,8 +52,7 @@ export const startGames = action({
       } else {
         console.error("The Open AI return nothing");
         return {
-          message: "The backend got an error",
-          error: "the maximum of a room is 8!",
+          message: "The backend got an error: The maximum amount of users is 8!",
         };
       }
     } catch (error: unknown) {
