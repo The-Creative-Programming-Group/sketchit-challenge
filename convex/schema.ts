@@ -13,7 +13,7 @@ export default defineSchema({
     words: v.optional(v.string()),
     chatEnabled: v.boolean(),
     timeLimit: v.number(),
-    pairs: v.boolean()
+    pairs: v.boolean(),
   }),
   messages: defineTable({
     playerId: v.id("player"),

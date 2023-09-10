@@ -3,10 +3,20 @@ import { v } from "convex/values";
 
 // create room
 export const createRoom = mutation({
-  args: { username: v.string(), timeLimit: v.number(), pairs: v.boolean(), chatEnabled: v.boolean() },
+  args: {
+    username: v.string(),
+    timeLimit: v.number(),
+    pairs: v.boolean(),
+    chatEnabled: v.boolean(),
+  },
   handler: async (ctx, args) => {
     const roomName = args.username + "'s Room";
-    const roomId = await ctx.db.insert("rooms", { roomName, timeLimit: args.timeLimit, pairs: args.pairs, chatEnabled: args.chatEnabled  });
+    const roomId = await ctx.db.insert("rooms", {
+      roomName,
+      timeLimit: args.timeLimit,
+      pairs: args.pairs,
+      chatEnabled: args.chatEnabled,
+    });
     const playerId = await ctx.db.insert("player", {
       username: args.username,
       roomId: roomId,

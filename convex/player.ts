@@ -6,8 +6,8 @@ export const startGames = mutation({
   args: { topic: v.string(), words: v.string(), roomId: v.id("rooms") },
   handler: async (ctx, args) => {
     await ctx.db.patch(args.roomId, {
-        topic: args.topic,
-        words: args.words,
+      topic: args.topic,
+      words: args.words,
     });
     // update the player who in this room
     const playerList = await ctx.db
