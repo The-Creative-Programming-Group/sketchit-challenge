@@ -1,10 +1,11 @@
 import { Button } from "~/ui/button";
 import { Input } from "~/ui/input";
 import { Switch } from "~/ui/switch";
+import { SmallInput } from "~/ui/small-input";
 
 export default function HomePage() {
   return (
-    <main className="w-screen flex min-h-screen flex-col items-center justify-between">
+    <main className="w-screen flex min-h-fullDVH flex-col items-center justify-between">
       <h1 className="text-[2.9375rem] sm:text-[5.75rem] mt-6 font-extrabold">
         SketchIt
       </h1>
@@ -15,6 +16,11 @@ export default function HomePage() {
         </Button>
         <div className="mt-10 flex justify-between">
           <Switch description="Chat" />
+          <SmallInput
+            type="number"
+            defaultValue={600}
+            description="Time limit"
+          />
           <Switch description="Pairplay" />
         </div>
       </form>
