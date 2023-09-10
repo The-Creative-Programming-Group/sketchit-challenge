@@ -14,7 +14,6 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as player from "../player";
 import type * as rooms from "../rooms";
 
 /**
@@ -26,7 +25,6 @@ import type * as rooms from "../rooms";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  player: typeof player;
   rooms: typeof rooms;
 }>;
 export declare const api: FilterApi<
