@@ -33,7 +33,7 @@ export const joinRoomByRoomId = mutation({
       .query("player")
       .filter((q) => q.eq(q.field("roomId"), args.roomId))
       .collect();
-    if (players.length > 8) {
+    if (players.length >= 8) {
       return {
         message: "The backend got an error: The maximum amount of users is 8!",
       };
