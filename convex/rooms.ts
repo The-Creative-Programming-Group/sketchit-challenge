@@ -5,7 +5,7 @@ import { v } from "convex/values";
 export const createRoom = mutation({
     args: { username: v.string() },
     handler: async (ctx, args) => {
-    const roomName = args.username+"'s Room";
+    const roomName = `${args.username}'s Room`;
     const roomId =  await ctx.db.insert("rooms", {roomName }); 
     const playerId = await ctx.db.insert("player",{username:args.username,roomId:roomId});
     return {"playId":playerId,"roomId":roomId}
