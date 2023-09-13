@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../../ui/navbar';
-import Profile from '../../ui/NavbarContent/profile';
+import Navbar from '../../../ui/navbar';
+import Profile from '../../../ui/NavbarContent/profile';
 
 export default function playerLayout({
     children,
