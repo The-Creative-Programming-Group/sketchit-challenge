@@ -7,9 +7,17 @@ export const startGames = mutation({
     handler: async (ctx, args) => {
         const gameId = await ctx.db.insert("games", { topic:args.topic, words:args.words });
         // update the player who in this room
+        // const playerList = await ctx.db.query("player").filter((q) => q.eq(q.field('roomId'), args.roomId)).collect();
+        // for (let i = 0; i < playerList.length; i++) {
+        //     await ctx.db.patch(playerList[i]?._id, { gameId: gameId, score: 0 })
+        // }
+
         const playerList = await ctx.db.query("player").filter((q) => q.eq(q.field('roomId'), args.roomId)).collect();
         for (let i = 0; i < playerList.length; i++) {
-            await ctx.db.patch(playerList[i]?._id, { gameId: gameId, score: 0 })
+            const playerId = playerList[i]?._id;
+            if (playerId) {
+                await ctx.db.patch(playerId, { gameId: gameId, score: 0 });
+            }
         }
     },
 });
