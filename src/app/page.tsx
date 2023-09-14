@@ -30,7 +30,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="w-screen flex min-h-screen flex-col items-center justify-between">
+    <main className="w-screen flex min-h-fullDVH flex-col items-center justify-between">
       <h1 className="text-[2.9375rem] sm:text-[5.75rem] mt-6 font-extrabold">
         SketchIt
       </h1>

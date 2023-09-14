@@ -1,11 +1,11 @@
-import { query, mutation } from "./_generated/server";
+import { mutation } from "./_generated/server";
 import { v } from "convex/values";
 
 // create room
 export const createRoom = mutation({
     args: { username: v.string() },
     handler: async (ctx, args) => {
-    const roomName = args.username+"'s Room";
+    const roomName = `${args.username}'s Room`;
     const roomId =  await ctx.db.insert("rooms", {roomName }); 
     const playerId = await ctx.db.insert("player",{username:args.username,roomId:roomId});
     return {"playId":playerId,"roomId":roomId}

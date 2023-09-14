@@ -2,6 +2,8 @@ import "~/styles/globals.css";
 import { Poppins } from "next/font/google";
 import { cn } from "~/lib/utils";
 import ConvexClientProvider from "./ConvexClientProvider";
+import { Analytics } from "@vercel/analytics/react";
+import React from "react";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,7 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("bg-background text-primary", poppins.className)}>
-      <ConvexClientProvider>{children}</ConvexClientProvider>  
+         <ConvexClientProvider>{children}</ConvexClientProvider>  
+         <Analytics />
       </body>
     </html>
   );
