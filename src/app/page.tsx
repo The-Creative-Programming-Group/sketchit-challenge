@@ -42,7 +42,6 @@ export default function HomePage() {
           onChange={(event) => setUsername(event.target.value)}
         />
         <Button
-          className="font-bold"
           type="submit"
           onClick={(event) => {
             {
