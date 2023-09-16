@@ -8,7 +8,7 @@ export default function playerLayout({
     children: React.ReactNode;
 }) {
     return(
-        <section className="">
+        <section className="h-screen px-10 py-14 flex flex-col">
             <Navbar>
                 <Profile />
                 <Profile />

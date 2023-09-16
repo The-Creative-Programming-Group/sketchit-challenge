@@ -1,8 +1,9 @@
+import Chat from "~/ui/chat";
+
 export default function RoomPage({ params }: {params: { slug: string }}) {
     return (
-        <main>
-            <h1>Player Page</h1>
-            <h1>{params.slug}</h1>
+        <main className="h-full flex justify-between">
+            <Chat roomId={params.slug}/>
         </main>
     );
 }

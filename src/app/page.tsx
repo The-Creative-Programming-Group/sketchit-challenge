@@ -7,6 +7,8 @@ import { useState } from "react";
 import { api } from "../../convex/_generated/api"
 import {SmallInput} from "~/ui/small-input";
 import { useRouter } from 'next/navigation';
+import { useSnapshot } from "valtio";
+import { state } from "~/app/state";
 
 export default function HomePage() {
     const [chatEnabled, setChatEnabled] = useState(false);
@@ -15,6 +17,7 @@ export default function HomePage() {
     const [username, setUsername] = useState("");
     const createRoom = useMutation(api.rooms.createRoom);
     const router = useRouter();
+    const snap = useSnapshot(state);
 
     const handleClick = async () => {
         try {
@@ -25,6 +28,8 @@ export default function HomePage() {
                 pairs: pairs,
             });
             const roomId = result.roomId;
+            const playId = result.playId;
+            snap.setPlayerId(playId);
             router.push(`/room/${roomId}`);
 
 

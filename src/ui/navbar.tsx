@@ -6,7 +6,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ( {children} ) => {
     return (
-        <nav className="w-screen h-[80px] px-3">
+        <nav className="w-auto h-[80px] px-3 mb-7">
            <ul className="flex justify-between">
                {React.Children.map(children, (child, index) => (
                      <li key={index}>{child}</li>
