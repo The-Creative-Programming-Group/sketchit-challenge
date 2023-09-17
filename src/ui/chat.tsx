@@ -39,9 +39,9 @@ const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
   }, [get_message]);
 
   return (
-    <div className="flex flex-col bg-primary w-[330px] h-full p-6 rounded-3xl justify-between">
+    <div className="flex flex-col bg-primary w-[330px] h-full rounded-3xl p-6 justify-between">
       <div
-        className="overflow-y-scroll rounded-3xl"
+        className="overflow-y-scroll"
         ref={chatRef}
         onScroll={handleScroll}
       >
