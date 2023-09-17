@@ -9,7 +9,7 @@ import Profile from "./profile";
 import { Simulate } from "react-dom/test-utils";
 import error = Simulate.error;
 import { useRef } from "react";
-import {Id} from "../../convex/_generated/dataModel";
+import { Id } from "../../convex/_generated/dataModel";
 
 const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
   const [message, setMessage] = useState("");
@@ -49,7 +49,7 @@ const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
         {get_message?.map(({ _id, body, username }) => (
           <div key={_id} className="flex gap-2 mb-2 items-center">
             {username ? (
-            <Profile type="chat" initial={username.charAt(0).toUpperCase()} />
+              <Profile type="chat" initial={username.charAt(0).toUpperCase()} />
             ) : (
               <Profile type="chat" initial="A" />
             )}
