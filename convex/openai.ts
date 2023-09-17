@@ -7,7 +7,7 @@ import OpenAI from "openai";
 
 // Initialize the OpenAI client with the given API key
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY  // This is also the default, can be omitted
+  apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
 });
 // start a game
 export const startGames = action({
