@@ -30,6 +30,7 @@ export default function HomePage() {
             const roomId = result.roomId;
             const playId = result.playId;
             snap.setPlayerId(playId);
+            snap.setUsername(username);
             router.push(`/room/${roomId}`);
 
 
