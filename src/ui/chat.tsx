@@ -11,10 +11,7 @@ import error = Simulate.error;
 import { useRef } from "react";
 import { Id } from "../../convex/_generated/dataModel";
 
-const Chat = ({
-                roomId}: {
-roomId: Id<"rooms">;
-}) => {
+const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
   const [message, setMessage] = useState("");
   const [scrollToBottom, setScrollToBottom] = useState(true);
   const snap = useSnapshot(state);
