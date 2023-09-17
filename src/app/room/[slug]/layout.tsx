@@ -5,11 +5,7 @@ import { useSnapshot } from "valtio";
 import { state } from "~/app/state";
 import { Button } from "~/ui/button";
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const snap = useSnapshot(state);
   return (
     <section className="h-screen px-10 py-14 flex flex-col">
