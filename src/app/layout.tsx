@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("bg-background text-primary", poppins.className)}>
-      <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
         <Analytics />
       </body>
     </html>
