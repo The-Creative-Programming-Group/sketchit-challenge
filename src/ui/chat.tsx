@@ -40,11 +40,7 @@ const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
 
   return (
     <div className="flex flex-col bg-primary w-[330px] h-full rounded-3xl p-6 justify-between">
-      <div
-        className="overflow-y-scroll"
-        ref={chatRef}
-        onScroll={handleScroll}
-      >
+      <div className="overflow-y-scroll" ref={chatRef} onScroll={handleScroll}>
         {get_message?.map(({ _id, body, username }) => (
           <div key={_id} className="flex gap-2 mb-2 items-center">
             {username ? (
