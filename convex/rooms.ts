@@ -21,7 +21,7 @@ export const createRoom = mutation({
       username: args.username,
       roomId: roomId,
     });
-    return { playId: playerId, roomId: roomId };
+    return { playerId: playerId, roomId: roomId };
   },
 });
 

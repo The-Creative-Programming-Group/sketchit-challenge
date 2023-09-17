@@ -1,13 +1,13 @@
 "use client";
 
-import * as React from "react";
+import React from "react";
 import { experimental_useFormStatus } from "react-dom";
 import { cn } from "~/lib/utils";
 
 export const Input = React.forwardRef<
   HTMLInputElement,
   React.InputHTMLAttributes<HTMLInputElement>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }) => {
   const { pending } = experimental_useFormStatus();
 
   return (
