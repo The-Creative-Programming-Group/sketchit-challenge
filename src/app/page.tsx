@@ -28,7 +28,7 @@ export default function HomePage() {
         pairs: pairs,
       });
       const roomId = result.roomId;
-      const playId = result.playId;
+      const playId = result.playerId;
       snap.setPlayerId(playId);
       snap.setUsername(username);
       router.push(`/room/${roomId}`);
@@ -48,7 +48,6 @@ export default function HomePage() {
           onChange={(event) => setUsername(event.target.value)}
         />
         <Button
-          className="font-bold"
           type="submit"
           onClick={(event) => {
             {

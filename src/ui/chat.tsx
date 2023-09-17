@@ -5,12 +5,13 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { state } from "~/app/state";
 import { useSnapshot } from "valtio";
-import Profile from "../ui/Profile";
+import Profile from "./profile";
 import { Simulate } from "react-dom/test-utils";
 import error = Simulate.error;
 import { useRef } from "react";
+import {Id} from "../../convex/_generated/dataModel";
 
-const Chat = ({ roomId }) => {
+const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
   const [message, setMessage] = useState("");
   const [scrollToBottom, setScrollToBottom] = useState(true);
   const snap = useSnapshot(state);
@@ -47,7 +48,11 @@ const Chat = ({ roomId }) => {
       >
         {get_message?.map(({ _id, body, username }) => (
           <div key={_id} className="flex gap-2 mb-2 items-center">
+            {username ? (
             <Profile type="chat" initial={username.charAt(0).toUpperCase()} />
+            ) : (
+              <Profile type="chat" initial="A" />
+            )}
             <div className="bg-background w-full h-[37px] rounded-full pl-2 flex items-center">
               <p className="text-primary">{body}</p>
             </div>

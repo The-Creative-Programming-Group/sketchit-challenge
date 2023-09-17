@@ -4,13 +4,10 @@ import { action } from "./_generated/server";
 import { v } from "convex/values";
 import { api } from "../convex/_generated/api";
 import OpenAI from "openai";
-import dotenv from "dotenv";
 
-dotenv.config();
-const apiKey: string = process.env.OPENAI_API_KEY || "";
 // Initialize the OpenAI client with the given API key
 const openai = new OpenAI({
-  apiKey: apiKey,
+  apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
 });
 // start a game
 export const startGames = action({

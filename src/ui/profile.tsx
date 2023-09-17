@@ -1,4 +1,4 @@
-const Profile = ({ type, initial }) => {
+const Profile = ({ type, initial }: { type: "nav" | "chat", initial: string}) => {
   return (
     <div>
       {type === "nav" && (
