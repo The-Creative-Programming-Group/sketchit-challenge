@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { state } from "~/app/state";
@@ -9,7 +8,7 @@ import Profile from "./profile";
 import { Simulate } from "react-dom/test-utils";
 import error = Simulate.error;
 import { useRef } from "react";
-import { Id } from "../../convex/_generated/dataModel";
+import { type Id } from "../../convex/_generated/dataModel";
 
 const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
   const [message, setMessage] = useState("");

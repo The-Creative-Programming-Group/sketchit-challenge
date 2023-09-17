@@ -1,5 +1,4 @@
 import { proxy } from "valtio";
-import { Id } from "../../convex/_generated/dataModel";
 
 export const state = proxy({
   playerId: "",

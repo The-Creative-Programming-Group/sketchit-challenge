@@ -1,5 +1,5 @@
 import Chat from "~/ui/chat";
-import { Id } from "../../../../convex/_generated/dataModel";
+import { type Id } from "../../../../convex/_generated/dataModel";
 
 export default function RoomPage({ params }: { params: { slug: string } }) {
   const roomId = params.slug as Id<"rooms">;
