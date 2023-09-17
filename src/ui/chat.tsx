@@ -11,7 +11,10 @@ import error = Simulate.error;
 import { useRef } from "react";
 import { Id } from "../../convex/_generated/dataModel";
 
-const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
+const Chat = ({
+                roomId}: {
+roomId: Id<"rooms">;
+}) => {
   const [message, setMessage] = useState("");
   const [scrollToBottom, setScrollToBottom] = useState(true);
   const snap = useSnapshot(state);
@@ -72,7 +75,7 @@ const Chat = ({ roomId }: { roomId: Id<"rooms"> }) => {
                 if (message !== "") {
                   send_message({
                     body: message,
-                    playerId: snap.playerId,
+                    playerId: snap.playerId as Id<"player">,
                     roomId: roomId,
                   }).catch(error);
                   setMessage("");

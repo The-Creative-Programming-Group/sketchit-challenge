@@ -28,8 +28,7 @@ export default function HomePage() {
         pairs: pairs,
       });
       const roomId = result.roomId;
-      const playId = result.playerId;
-      snap.setPlayerId(playId);
+      snap.setPlayerId(result.playerId);
       snap.setUsername(username);
       router.push(`/room/${roomId}`);
     } catch (error) {
