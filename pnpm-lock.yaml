@@ -42,7 +42,7 @@ devDependencies:
     version: 8.56.12
   "@types/node":
     specifier: ^18.16.0
-    version: 18.19.60
+    version: 18.19.61
   "@types/prettier":
     specifier: ^2.7.2
     version: 2.7.3
@@ -970,10 +970,10 @@ packages:
       }
     dev: true
 
-  /@types/node@18.19.60:
+  /@types/node@18.19.61:
     resolution:
       {
-        integrity: sha512-cYRj7igVqgxhlHFdBHHpU2SNw3+dN2x0VTZJtLYk6y/ieuGN4XiBgtDjYVktM/yk2y/8pKMileNc6IoEzEJnUw==,
+        integrity: sha512-z8fH66NcVkDzBItOao+Nyh0fiy7CYdxIyxnNCcZ60aY0I+EA/y4TSi/S/W9i8DIQvwVo7a0pgzAxmDeNnqrpkw==,
       }
     dependencies:
       undici-types: 5.26.5
