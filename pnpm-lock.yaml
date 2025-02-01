@@ -22,7 +22,7 @@ dependencies:
     version: 2.1.1
   convex:
     specifier: ^1.2.1
-    version: 1.17.0(react-dom@18.2.0)(react@18.2.0)
+    version: 1.18.2(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: ^13.4.2
     version: 13.5.8(react-dom@18.2.0)(react@18.2.0)
@@ -1736,18 +1736,18 @@ packages:
       }
     dev: true
 
-  /convex@1.17.0(react-dom@18.2.0)(react@18.2.0):
+  /convex@1.18.2(react-dom@18.2.0)(react@18.2.0):
     resolution:
       {
-        integrity: sha512-fNv5GYvkGYIUYbn8ANnJWabjVqbFoUfm8ExDxlWxeDZAuafPJmatVaQWHZ1k+oYD0pmnchrhmtmMV8mX7T0s9A==,
+        integrity: sha512-a9VVy9Ss7Z5Twt80t0yekyB4CWUWB3EpH5aru5MxqD8EX2QLnu9lNtsTc+eKM1V1CTVvC3LuYaBWBdcvFqMsYQ==,
       }
     engines: { node: ">=18.0.0", npm: ">=7.0.0" }
     hasBin: true
     peerDependencies:
       "@auth0/auth0-react": ^2.0.1
       "@clerk/clerk-react": ^4.12.8 || ^5.0.0
-      react: ^17.0.2 || ^18.0.0
-      react-dom: ^17.0.2 || ^18.0.0
+      react: ^17.0.2 || ^18.0.0 || ^19.0.0-0 || ^19.0.0
+      react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0-0 || ^19.0.0
     peerDependenciesMeta:
       "@auth0/auth0-react":
         optional: true
@@ -1760,7 +1760,7 @@ packages:
     dependencies:
       esbuild: 0.23.0
       jwt-decode: 3.1.2
-      prettier: 3.2.5
+      prettier: 3.4.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -4198,10 +4198,10 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@3.2.5:
+  /prettier@3.4.2:
     resolution:
       {
-        integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==,
+        integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==,
       }
     engines: { node: ">=14" }
     hasBin: true
