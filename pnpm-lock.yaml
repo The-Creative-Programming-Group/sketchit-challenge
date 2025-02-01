@@ -10,7 +10,7 @@ dependencies:
     version: 1.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
   "@t3-oss/env-nextjs":
     specifier: ^0.6.0
-    version: 0.6.1(typescript@5.7.3)(zod@3.23.8)
+    version: 0.6.1(typescript@5.7.3)(zod@3.24.1)
   "@total-typescript/ts-reset":
     specifier: ^0.6.0
     version: 0.6.1
@@ -34,7 +34,7 @@ dependencies:
     version: 18.2.0(react@18.2.0)
   zod:
     specifier: ^3.21.4
-    version: 3.23.8
+    version: 3.24.1
 
 devDependencies:
   "@types/eslint":
@@ -929,7 +929,7 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /@t3-oss/env-core@0.6.1(typescript@5.7.3)(zod@3.23.8):
+  /@t3-oss/env-core@0.6.1(typescript@5.7.3)(zod@3.24.1):
     resolution:
       {
         integrity: sha512-KQD7qEDJtkWIWWmTVjNvk0wnHpkvAQ6CRbUxbWMFNG/fiosBQDQvtRpBNu6USxBscJCoC4z6y7P9MN52/mLOzw==,
@@ -939,10 +939,10 @@ packages:
       zod: ^3.0.0
     dependencies:
       typescript: 5.7.3
-      zod: 3.23.8
+      zod: 3.24.1
     dev: false
 
-  /@t3-oss/env-nextjs@0.6.1(typescript@5.7.3)(zod@3.23.8):
+  /@t3-oss/env-nextjs@0.6.1(typescript@5.7.3)(zod@3.24.1):
     resolution:
       {
         integrity: sha512-z1dIC++Vxj9kmzX5nSPfcrCSkszy3dTEPC4Ssx7Ap5AqR3c2Qa7S0xf8axn6coy7D/vCXDAAnHYnCMDhtcY3SQ==,
@@ -951,9 +951,9 @@ packages:
       typescript: ">=4.7.2"
       zod: ^3.0.0
     dependencies:
-      "@t3-oss/env-core": 0.6.1(typescript@5.7.3)(zod@3.23.8)
+      "@t3-oss/env-core": 0.6.1(typescript@5.7.3)(zod@3.24.1)
       typescript: 5.7.3
-      zod: 3.23.8
+      zod: 3.24.1
     dev: false
 
   /@total-typescript/ts-reset@0.6.1:
@@ -5225,9 +5225,9 @@ packages:
     engines: { node: ">=10" }
     dev: true
 
-  /zod@3.23.8:
+  /zod@3.24.1:
     resolution:
       {
-        integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==,
+        integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==,
       }
     dev: false
